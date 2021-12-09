@@ -110,20 +110,48 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       require "controllers/listStudents.php";
       $controlador = new ListStudents();
       $controlador->processRequest();
-    break;
+      break;
     case "delete_student";
       require "controllers/deleteStudent.php";
       $controlador = new DeleteStudent();
       $controlador->processRequest();
-    break;
+      break;
     case "edit_student_form";
       require "controllers/editStudent.php";
       $controlador = new EditStudent();
       $controlador->editStudentForm();
+      break;
     case "edit_student";
       require "controllers/editStudent.php";
       $controlador = new EditStudent();
       $controlador->processRequest();
+      break;
+    case "cart";
+      require "controllers/listCart.php";
+      $controlador = new ListCart();
+      $controlador -> processRequest();
+      break;
+    case "add _item_cart";
+      require "controllers/addCartItem.php";
+      require_once "models/cartSession.php"
+      $cartSession = new CartSession();
+      $controlador = new AddCartSession($cartSession);
+      $controlador -> processRequest();
+      break;
+    case "update _qtd_cart";
+      require "controllers/updateQtdCart.php";
+      require_once "models/cartSession.php"
+      $cartSession = new CartSession();
+      $controlador = new UpdateQtdCart($cartSession);
+      $controlador -> processRequest();
+      break;
+    case "delete _item_cart";
+      require "controllers/deleteCartItem.php";
+      require_once "models/cartSession.php"
+      $cartSession = new CartSession();
+      $controlador = new DeleteCartItem($cartSession);
+      $controlador -> processRequest();
+      break;
     default:
       require "controllers/home.php";
       $controlador = new Home();
