@@ -11,7 +11,7 @@ class studentDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "select * from cantina_web.student";
+            $query = "select * from cantina_web.student where status = 1";
             $sql = $connection->prepare($query);
 
             $sql->execute();
@@ -39,7 +39,7 @@ class studentDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "insert into cantina_web.student (name, last_name, registration, cpf, idResponsible) values (:name, :last_name, :registration, :cpf, :idResponsible)";
+            $query = "insert into cantina_web.student (name, last_name, registration, cpf, idResponsible, status) values (:name, :last_name, :registration, :cpf, :idResponsible, 1)";
             $sql = $connection->prepare($query);
 
             $name =  $student->getName();
@@ -76,7 +76,7 @@ class studentDAO
         try{
             $connection = Connection::getConexao();
 
-            $query = "delete from student where id = :id";
+            $query = "update cantina_web.student SET status= 0 where id = :id";
             $sql = $connection->prepare($query);
 
             $sql->bindParam("id", $id);
