@@ -133,21 +133,21 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       break;
     case "add _item_cart";
       require "controllers/addCartItem.php";
-      require_once "models/cartSession.php"
+      require_once "models/cartSession.php";
       $cartSession = new CartSession();
       $controlador = new AddCartSession($cartSession);
       $controlador -> processRequest();
       break;
     case "update _qtd_cart";
       require "controllers/updateQtdCart.php";
-      require_once "models/cartSession.php"
+      require_once "models/cartSession.php";
       $cartSession = new CartSession();
       $controlador = new UpdateQtdCart($cartSession);
       $controlador -> processRequest();
       break;
     case "delete _item_cart";
       require "controllers/deleteCartItem.php";
-      require_once "models/cartSession.php"
+      require_once "models/cartSession.php";
       $cartSession = new CartSession();
       $controlador = new DeleteCartItem($cartSession);
       $controlador -> processRequest();
