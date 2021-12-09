@@ -11,7 +11,7 @@ class ProductDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "select * from cantina_web.products";
+            $query = "select * from cantina_web.products where status = 1;";
             $sql = $connection->prepare($query);
 
             $sql->execute();
@@ -68,7 +68,7 @@ class ProductDAO
         try{
             $connection = Connection::getConexao();
 
-            $query = "delete from products where id = :id";
+            $query = "update cantina_web.products SET status= 0 where id = :id";
             $sql = $connection->prepare($query);
 
             $sql->bindParam("id", $id);
@@ -87,24 +87,25 @@ class ProductDAO
     {
         try {
             $connection = Connection::getConexao();
-
-            $query = "update into cantina_web.products (name, description, quantity, unit_price, image) values (:name, :description, :quantity, :unit_price, :image) where id= :id";
+            
+            $query = "update cantina_web.products SET name = :name, description = :description,
+                quantity = :quantity, unit_price = :unit_price, image = :image WHERE id = :id";
             $sql = $connection->prepare($query);
-
+            
             $id =  $product->getId();
             $name =  $product->getName();
             $description =  $product->getDescription();
             $quantity =  $product->getQuantity();
             $unitPrice =  $product->getUnitPrice();
             $image =  $product->getImage();
-
+            
             $sql->bindParam("id", $id);
             $sql->bindParam("name", $name);
             $sql->bindParam("description", $description);
             $sql->bindParam("quantity", $quantity);
             $sql->bindParam("unit_price", $unitPrice);
             $sql->bindParam("image", $image);
-
+            
             $sql->execute();
 
             return true;

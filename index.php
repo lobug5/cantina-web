@@ -92,7 +92,7 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador->processRequest();
       break;
     case "delete_product";
-      require"controllers/deleteProduct.php";
+      require "controllers/deleteProduct.php";
       $controlador = new DeleteProduct();
       $controlador->processRequest();
     case "edit_product_form";
@@ -100,7 +100,7 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador = new EditProduct();
       $controlador->editProductsForm();
     case "edit_product";
-      require"controllers/editProduct.php";
+      require "controllers/editProduct.php";
       $controlador = new EditProduct();
       $controlador->processRequest();
     default:

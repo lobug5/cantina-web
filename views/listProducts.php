@@ -1,3 +1,10 @@
+<?php
+$isSuccessRegistration = false;
+
+if (isset($_GET['is_success_registration'])) {
+    $isSuccessRegistration = strtolower($_GET['is_success_registration']) === 'true' ? true : false;
+}
+?>
 <!DOCTYPE html>
 <html lang="Pt-Br">
 
@@ -13,11 +20,33 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d7bdbec83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="js.js">
+
+    <script>
+    $(document).ready(function() {
+        if (<?php echo $isSuccessRegistration ?>) {
+            $('#notification_registration').fadeIn(1000);
+            setTimeout(function() {
+                $('#notification_registration').fadeOut(1000);
+            }, 3000);
+        }
+    });
+
+    function confirmDeleteProduct(){ 
+      return confirm('Tem certeza que quer apagar este produto?');
+    }
+    </script>
 </head>
 
 <body>
 
   <section class="section-top">
+    <div class="notification">
+        <div class="container">
+            <div class="alert alert-primary" id="notification_registration" style="display:none;">
+                Edição realizada com sucesso !
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-xl navbar-togglable">
       <div class="container-fluid">
         <div class="logo">
@@ -70,8 +99,8 @@
            <td><?php echo $productList[$i]->getQuantity(); ?></td>
            <td><?php echo $productList[$i]->getUnitPrice(); ?></td>
            <td> 
-          <a href="edit_product?id=<?php echo $productList[$i]->getId(); ?>" style="background-color:black;"><i class="fas fa-edit"></i></a>
-          <a href="delete_product?id=<?php echo $productList[$i]->getId(); ?>" style="background-color:black;" ><i class="fas fa-user-minus"></i></a>
+          <a href="./edit_product?id=<?php echo $productList[$i]->getId(); ?>" style="background-color:black;"><i class="fas fa-edit"></i></a>
+          <a onclick="return confirmDeleteProduct();" href="delete_product?id=<?php echo $productList[$i]->getId(); ?>" style="background-color:black;" ><i class="fas fa-user-minus"></i></a>
         </td></a>
            <td>
            </td>

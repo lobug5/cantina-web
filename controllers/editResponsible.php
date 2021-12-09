@@ -16,8 +16,8 @@ class EditResponsible implements IControlador
 
     public function processRequest()
     {
-        $responsibleList = $this -> responsible -> getResponsibleById($_SESSION['idResp']);
-        $authResponsible = $this -> auth -> getCredentialsResponsibleById($_SESSION['idResp']);
+        $responsibleList = $this -> responsible -> getResponsibleById($_GET["id"]);
+        $authResponsible = $this -> auth -> getCredentialsResponsibleById($_GET["id"]);
         require "views/editResponsible.php";
     }
 
@@ -27,7 +27,7 @@ class EditResponsible implements IControlador
 
             if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['documentType']) && isset($_POST['document'])) {
 
-                $idResp = intval($_SESSION['idResp']);
+                $idResp = intval($_POST["idResponsible"]);
                 
                 $this->responsible->setId($idResp);
                 $this->responsible->setTypeDocument($_POST['documentType']);
@@ -38,8 +38,7 @@ class EditResponsible implements IControlador
                 $this->responsible->editResponsible();
                 
             }
-            session_unset($_SESSION);
-            header('Location:edit_responsible?is_success_registration=true', true, 302);
+            header('Location:list_responsibles?is_success_registration=true', true, 302);
         } catch (string $e) {
             header('Location:edit_responsible?is_success_registration=false', true, 302);
         }

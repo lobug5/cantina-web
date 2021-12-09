@@ -1,11 +1,3 @@
-<?php
-$isSuccessRegistration = false;
-
-if (isset($_GET['is_success_registration'])) {
-    $isSuccessRegistration = strtolower($_GET['is_success_registration']) === 'true' ? true : false;
-}
-?>
-
 <!DOCTYPE html>
 <html lang="Pt-Br">
 
@@ -22,30 +14,10 @@ if (isset($_GET['is_success_registration'])) {
     <script src="https://kit.fontawesome.com/3d7bdbec83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="js.js">
 
-    <script>
-    $(document).ready(function() {
-        if (<?php echo $isSuccessRegistration ?>) {
-            $('#notification_registration').fadeIn(1000);
-            setTimeout(function() {
-                $('#notification_registration').fadeOut(1000);
-            }, 5000);
-        }
-    });
-    </script>
-
 </head>
 
 <body>
     <section class="section-top">
-
-        <div class="notification">
-            <div class="container">
-                <div class="alert alert-primary" id="notification_registration" style="display:none;">
-                    Edição realizada com sucesso !
-                </div>
-            </div>
-        </div>
-
         <nav class="navbar navbar-expand-xl navbar-togglable">
             <div class="container-fluid">
                 <div class="logo">
@@ -58,9 +30,9 @@ if (isset($_GET['is_success_registration'])) {
                     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                     <div class="slideout-sidebar">
                         <ul>
-                            <li><a href="Cantina.html">Home</a></li>
+                            <li><a href="canteen">Home</a></li>
                             <li><a href="list_products">Gerenciamento de Produtos</a></li>
-                            <li><a href="Cantina-Responsaveis-Historico.html">Gerenciamento de Responsaveis</a></li>
+                            <li><a href="list_responsibles">Gerenciamento de Responsaveis</a></li>
                             <li><a href="index.html">Sair</a></li>
                             </li>
                         </ul>
@@ -85,8 +57,11 @@ if (isset($_GET['is_success_registration'])) {
         <div class="row">
             <div class="col">
                 <div class="col-sm-6 offset-md-3">
-                    <form name="register_products_form" method="post" enctype="multipart/form-data"
-                        action="register_products_form">
+                    <form name="edit_product_form" method="POST" enctype="multipart/form-data"
+                        action="edit_product_form">
+                        <div class="form-group">
+                            <input type="hidden" required name="idProduct" class="form-control" id="inputProductID" placeholder="ID do produto" value="<?php echo $productList->getId() ?>">
+                        </div>
                         <div class="form-group">
                             <label for="inputProductName">Nome</label>
                             <input required name="name" class="form-control" id="inputProductName" placeholder="Nome do produto" value="<?php echo $productList->getName() ?>">
@@ -100,7 +75,7 @@ if (isset($_GET['is_success_registration'])) {
                             <div class="py-3">
                                 <div class="form-group">
                                     <label for="InputValueProduct">Valor</label>
-                                    <input required name="price" type="number" class="form-control"
+                                    <input required name="unit_price" type="number" class="form-control"
                                         id="InputValueProduct" placeholder="Ex. R$10,00" value="<?php echo $productList->getUnitPrice() ?>">
                                 </div>
                                 <div class="py-3">
@@ -119,7 +94,7 @@ if (isset($_GET['is_success_registration'])) {
                                     <div class="container">
                                         <div class="row justify-content-center">
                                             <div class="col-4">
-                                                <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                                <button class="btn btn-primary" type="submit">Atualizar</button>
                                             </div>
                                         </div>
                                     </div>

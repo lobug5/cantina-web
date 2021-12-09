@@ -1,12 +1,3 @@
-<?php
-$isSuccessRegistration = false;
-
-if (isset($_GET['is_success_registration'])) {
-    $isSuccessRegistration = strtolower($_GET['is_success_registration']) === 'true' ? true : false;
-}
-
-?>
-
 <!DOCTYPE html>
 <html lang="Pt-Br">
 
@@ -22,19 +13,6 @@ if (isset($_GET['is_success_registration'])) {
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d7bdbec83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="js.js">
-
-    <script>
-    $(document).ready(function() {
-        if (<?php echo $isSuccessRegistration ?>) {
-            $('#notification_registration').fadeIn(1000);
-            setTimeout(function() {
-                $('#notification_registration').fadeOut(1000);
-            }, 5000);
-
-            parent.document.getElementById("edit_responsible_form").reset();
-        }
-    });
-    </script>
 
 </head>
 
@@ -89,7 +67,10 @@ if (isset($_GET['is_success_registration'])) {
             <div class="col">
                 <div class="col-sm-6 offset-md-3">
                     <form name="edit_responsible_form" id="edit_responsible_form" method="POST" action="edit_responsible_form">
-                        <div class="form-group">
+                    <div class="form-group">
+                            <input type="hidden" required name="idResponsible" class="form-control" id="inputResponsibleID" placeholder="ID do responsavel" value="<?php echo $responsibleList->getId() ?>">
+                    </div> 
+                    <div class="form-group">
                             <label for="inputResponsibleName">Nome</label>
                             <input name="name" class="form-control" id="inputResponsibleName"
                                 placeholder="Nome do responsavel" value="<?php echo $responsibleList->getName() ?>">
