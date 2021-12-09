@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cantina</title>
+    <title>Responsável</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
@@ -30,9 +30,9 @@
           <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
           <div class="slideout-sidebar">
             <ul>
-              <li><a href="Cantina.html">Home</a></li>
-              <li><a href="Cantina-Responsaveis-Historico.html">Gerenciamento de Responsáveis</a></li>
-              <li><a href="index.html">Sair</a></li>
+              <li><a href="responsible">Home</a></li>
+              <li><a href="responsible">Cadastrar Aluno</a></li>
+              <li><a href="home">Sair</a></li>
             </ul>
           </div>
         </nav>

@@ -60,12 +60,8 @@ if (isset($_GET['is_success_registration'])) {
                     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                     <div class="slideout-sidebar">
                         <ul>
-                            <li><a href="Responsavel.html">Home</a></li>
-                            <li><a href="Responsavel-Cardapio.html">Cardápio</a></li>
                             <li><a href="Responsavel-Deposito.html">Depósito</a></li>
-                            <li><a href="Responsavel-Extrato.html">Extrato</a></li>
-                            <li><a href="Responsavel-Historico-Aluno.html">Histórico dos Alunos</a></li>
-                            <li><a href="index.html">Sair</a></li>
+                            <li><a href="home">Sair</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -85,6 +81,7 @@ if (isset($_GET['is_success_registration'])) {
     </div>
 
     <br>
+    
     <form>
         <div class="row">
             <div class="col positionButtons">
@@ -93,57 +90,64 @@ if (isset($_GET['is_success_registration'])) {
                         <img src="assets/images/icon_plus.svg" alt="+" />
                     </div>
                     <div class="textStyle">
-                        <p><a href="list_students">Lista de alunos cadastrados</a></p>
+                        <p><a href="list_students">Lista de Alunos Cadastrados</a></p>
                     </div>
                 </div>
             </div>
         </div>
     </form>
-
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm ">
-            <button id="Adicionar" type="button" class="btn btn-secondary btn-mostrar"
-                onclick="Mudarestado('fegister_student_form')">Adicionar Aluno</button>
-        </nav>
-    </div>
+    
     <br>
-    <div class="container-fluid">
-        <form name="register_student_form" method="post" action="register_student_form">
-            <h4><span>Registrar novo aluno</span><h4>
-                    <br>
-                    <div class="row">
-                        <div class="col">
+
+    <section>
+        <div class="row">
+            <div class="col">
+                <div class="col-sm-6 offset-md-3">
+                    <form name="register_student_form" method="post" action="register_student_form">
+                        <h5> Cadastre um novo aluno ! </h5>
+                        <div class="form-group">
+                            <label for="inputStudentName">Nome</label>
                             <input required type="text" class="form-control" placeholder="Nome" name="name">
                         </div>
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="inputStudentLastName">Sobrenome</label>
+                                <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                    <label for="InputStudentRegistration">Matrícula</label>
+                                    <input required type="text" class="form-control" placeholder="Matricula" name="registration">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="InputStudentCpft">CPF</label>
+                                <input required type="text" class="form-control" placeholder="CPF" name="cpf">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                    <label for="InputStudentEmail">Email</label>
+                                    <input required type="text" class="form-control" placeholder="Email" name="email">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="inputStudentPassword">Senha</label>
+                                <input required type="password" class="form-control" placeholder="Senha" name="password">
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="password" class="form-control" placeholder="Senha" name="password">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Email" name="email">
-                        </div>
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="CPF" name="cpf">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Matricula"
-                                name="registration">
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Enviar</button>
-        </form>
-    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer mt-5 py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -152,7 +156,7 @@ if (isset($_GET['is_success_registration'])) {
                         Endereço
                     </h4>
                     <h6 class="footer-title">
-                        Rua x, numero 39
+                        Rua Santo Antônio, número 39
                     </h6>
                 </div>
                 <div class="col-4">
@@ -160,12 +164,12 @@ if (isset($_GET['is_success_registration'])) {
                         Fale conosco
                     </h4>
                     <h6 class="footer-title">
-                        (71) 99999-9999
+                        (71) 99515-9412
                     </h6>
                 </div>
             </div>
         </div>
-    </footer>
+  </footer>
 
     <script type="text/javascript">
     function Mudarestado(el) {
