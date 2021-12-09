@@ -92,7 +92,7 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador->processRequest();
       break;
     case "delete_product";
-      require "controllers/deleteProduct.php";
+      require"controllers/deleteProduct.php";
       $controlador = new DeleteProduct();
       $controlador->processRequest();
       break;
@@ -102,8 +102,27 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador->editProductsForm();
       break;
     case "edit_product";
-      require "controllers/editProduct.php";
+      require"controllers/editProduct.php";
       $controlador = new EditProduct();
+      $controlador->processRequest();
+      break;
+    case "list_students";
+      require"controllers/listStudents.php";
+      $controlador = new ListStudents();
+      $controlador->processRequest();
+    break;
+    case "delete_student";
+      require"controllers/deleteStudent.php";
+      $controlador = new DeleteStudent();
+      $controlador->processRequest();
+    break;
+    case "edit_student_form";
+      require"controllers/editStudent.php";
+      $controlador = new EditStudent();
+      $controlador->editStudentForm();
+    case "edit_student";
+      require "controllers/editStudent.php";
+      $controlador = new EditStudent();
       $controlador->processRequest();
     default:
       require "controllers/home.php";

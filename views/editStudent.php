@@ -41,7 +41,7 @@ if (isset($_GET['is_success_registration'])) {
     <div class="notification">
         <div class="container">
             <div class="alert alert-primary" id="notification_registration" style="display:none;">
-                Cadastro realizado com sucesso !
+                Edição realizada com sucesso !
             </div>
         </div>
     </div>
@@ -73,74 +73,40 @@ if (isset($_GET['is_success_registration'])) {
         </nav>
         <br>
         <br>
-        <h1 class="Subtitulo_Resp"><span>Responsável</span></h1>
+        <h1 class="Subtitulo_Resp"><span>Edição de aluno</span></h1>
         <br>
     </section>
     <br>
     <div class="jumbotron">
         <h1></h1>
-        <h5>Esta sessão tem como objetivo cadastrar e ver os alunos cadastrados para que possam usufruir dos benefícios
+        <h5>Esta sessão tem como objetivo editar os dados cadastrais do aluno para que possam usufruir dos benefícios
             oferecidos pela cantina da escola</h5>
     </div>
-    </div>
 
     <br>
-    <form>
-        <div class="row">
-            <div class="col positionButtons">
-                <div class="buttonAddProdutos form-check-inline">
-                    <div class="iconeAddProdutos">
-                        <img src="assets/images/icon_plus.svg" alt="+" />
-                    </div>
-                    <div class="textStyle">
-                        <p><a href="list_students">Lista de alunos cadastrados</a></p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </form>
 
     <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm ">
-            <button id="Adicionar" type="button" class="btn btn-secondary btn-mostrar"
-                onclick="Mudarestado('fegister_student_form')">Adicionar Aluno</button>
-        </nav>
-    </div>
-    <br>
-    <div class="container-fluid">
-        <form name="register_student_form" method="post" action="register_student_form">
-            <h4><span>Registrar novo aluno</span><h4>
+        <form name="edit_student_form" method="post" action="edit_student_form">
+            <h4><span>Editar Aluno</span><h4>
                     <br>
                     <div class="row">
                         <div class="col">
-                            <input required type="text" class="form-control" placeholder="Nome" name="name">
+                            <input required type="text" class="form-control" placeholder="Nome" name="name" value="<?php echo $studentList->getName() ?>">
                         </div>
                         <div class="col">
-                            <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
+                            <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName" value="<?php echo $studentList->getLastName() ?>">
                         </div>
                     </div>
                     <br>
                     <div class="row">
                         <div class="col">
-                            <input required type="password" class="form-control" placeholder="Senha" name="password">
+                            <input required type="text" class="form-control" placeholder="CPF" name="cpf" value="<?php echo $studentList->getCpf() ?>">
+                        </div>
+                        <div class="col">
+                            <input required type="text" class="form-control" placeholder="Matricula" name="registration" value="<?php echo $studentList->getRegistration() ?>">
                         </div>
                     </div>
                     <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Email" name="email">
-                        </div>
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="CPF" name="cpf">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Matricula"
-                                name="registration">
-                        </div>
-                    </div>
                     <button class="btn btn-primary" type="submit">Enviar</button>
         </form>
     </div>

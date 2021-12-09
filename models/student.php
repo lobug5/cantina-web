@@ -98,4 +98,30 @@ class Student
         $school = new StudentDAO();
         $school->setStudent($this);
     }
+
+    public function getAllStudents(){
+        $student = new StudentDAO();
+        return $student->getStudents();
+    }
+
+    public function getStudents(){
+        $studentDAO = new StudentDAO();
+        return $studentDAO->getStudents();
+    }
+
+    public function deleteStudent($id){
+        $studentDAO = new StudentDAO();
+        return $studentDAO->deleteStudent($id);
+    }
+
+    public function editStudent(){
+        $studentDAO = new StudentDAO();
+        return $studentDAO->editStudent($this);
+    }
+
+    public function getStudentById($id){
+        $studentDAO = new StudentDAO();
+        return $studentDAO->getStudentById($id);
+    }
+
 }
