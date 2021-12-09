@@ -39,7 +39,7 @@ class ResponsibleDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "insert into cantina_web.responsible (idSchool, document, type_document, name, phone) values (:idSchool, :document, :type_document, :name, :phone)";
+            $query = "insert into cantina_web.responsible (idSchool, document, type_document, name, phone, status) values (:idSchool, :document, :type_document, :name, :phone, 1)";
             $sql = $connection->prepare($query);
 
             $idSchool =  $responsible->getIdSchool();

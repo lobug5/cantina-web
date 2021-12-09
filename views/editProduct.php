@@ -13,7 +13,6 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d7bdbec83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="js.js">
-
 </head>
 
 <body>

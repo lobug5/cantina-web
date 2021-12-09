@@ -22,18 +22,21 @@ if (isset($_GET['is_success_registration'])) {
     <link rel="stylesheet" href="js.js">
 
     <script>
-      $(document).ready(function() {
-          if (<?php echo $isSuccessRegistration ?>) {
-              $('#notification_registration').fadeIn(1000);
-              setTimeout(function() {
-                  $('#notification_registration').fadeOut(1000);
-              }, 3000);
-          }
-      });
 
-      function confirmDeleteProduct(){ 
-        return confirm('Tem certeza que quer apagar este produto?');
+        function confirmDeleteProduct(){ 
+          return confirm('Tem certeza que quer apagar este produto?');
+        }
+
+      if (<?php echo $isSuccessRegistration == true ?>) {
+        $(document).ready(function() {
+          $('#notification_registration').fadeIn(1000);
+          setTimeout(function() {
+              $('#notification_registration').fadeOut(1000);
+          }, 1000);
+        });
       }
+
+    
     </script>
 </head>
 

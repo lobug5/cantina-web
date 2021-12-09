@@ -39,7 +39,7 @@ class ProductDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "insert into cantina_web.products (name, description, quantity, unit_price, image) values (:name, :description, :quantity, :unit_price, :image)";
+            $query = "insert into cantina_web.products (name, description, quantity, unit_price, image, status) values (:name, :description, :quantity, :unit_price, :image, 1)";
             $sql = $connection->prepare($query);
 
             $name =  $product->getName();
