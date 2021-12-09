@@ -99,51 +99,58 @@ if (isset($_GET['is_success_registration'])) {
             </div>
         </div>
     </form>
-
-    <div class="container-fluid">
-        <nav class="navbar navbar-expand-sm ">
-            <button id="Adicionar" type="button" class="btn btn-secondary btn-mostrar"
-                onclick="Mudarestado('fegister_student_form')">Adicionar Aluno</button>
-        </nav>
-    </div>
+    
     <br>
-    <div class="container-fluid">
-        <form name="register_student_form" method="post" action="register_student_form">
-            <h4><span>Registrar novo aluno</span><h4>
-                    <br>
-                    <div class="row">
-                        <div class="col">
+
+    <section>
+        <div class="row">
+            <div class="col">
+                <div class="col-sm-6 offset-md-3">
+                    <form name="register_student_form" method="post" action="register_student_form">
+                        <h5> Cadastre um novo aluno ! </h5>
+                        <div class="form-group">
+                            <label for="inputStudentName">Nome</label>
                             <input required type="text" class="form-control" placeholder="Nome" name="name">
                         </div>
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="inputStudentLastName">Sobrenome</label>
+                                <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                    <label for="InputStudentRegistration">Matrícula</label>
+                                    <input required type="text" class="form-control" placeholder="Matricula" name="registration">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="InputStudentCpft">CPF</label>
+                                <input required type="text" class="form-control" placeholder="CPF" name="cpf">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                    <label for="InputStudentEmail">Email</label>
+                                    <input required type="text" class="form-control" placeholder="Email" name="email">
+                            </div>
+                        <div class="py-3">
+                            <div class="form-group">
+                                <label for="inputStudentPassword">Senha</label>
+                                <input required type="password" class="form-control" placeholder="Senha" name="password">
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="password" class="form-control" placeholder="Senha" name="password">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-4">
+                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Email" name="email">
-                        </div>
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="CPF" name="cpf">
-                        </div>
-                    </div>
-                    <br>
-                    <div class="row">
-                        <div class="col">
-                            <input required type="text" class="form-control" placeholder="Matricula"
-                                name="registration">
-                        </div>
-                    </div>
-                    <button class="btn btn-primary" type="submit">Enviar</button>
-        </form>
-    </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer mt-5 py-5">
         <div class="container">
             <div class="row justify-content-center">
