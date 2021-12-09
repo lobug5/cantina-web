@@ -4,6 +4,7 @@ $isSuccessRegistration = false;
 if (isset($_GET['is_success_registration'])) {
     $isSuccessRegistration = strtolower($_GET['is_success_registration']) === 'true' ? true : false;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -29,6 +30,8 @@ if (isset($_GET['is_success_registration'])) {
             setTimeout(function() {
                 $('#notification_registration').fadeOut(1000);
             }, 5000);
+
+            parent.document.getElementById("edit_responsible_form").reset();
         }
     });
     </script>
@@ -41,7 +44,7 @@ if (isset($_GET['is_success_registration'])) {
         <div class="notification">
             <div class="container">
                 <div class="alert alert-primary" id="notification_registration" style="display:none;">
-                    Cadastro realizado com sucesso
+                    Edição realizada com sucesso !
                 </div>
             </div>
         </div>
@@ -60,7 +63,7 @@ if (isset($_GET['is_success_registration'])) {
                         <ul>
                             <li><a href="Cantina.html">Home</a></li>
                             <li><a href="list_products">Gerenciamento de Produtos</a></li>
-                            <li><a href="Cantina-Responsaveis-Historico.html">Gerenciamento de Responsaveis</a></li>
+                            <li><a href="list_responsibles">Gerenciamento de Responsaveis</a></li>
                             <li><a href="index.html">Sair</a></li>
                             </li>
                         </ul>
@@ -70,66 +73,66 @@ if (isset($_GET['is_success_registration'])) {
         </nav>
         <br>
         <br>
-        <h1 class="Subtitulo_Resp"><span>Cadastro de Produtos</span></h1>
+        <h1 class="Subtitulo_Resp"><span>Edição de Responsaveis</span></h1>
         <br>
     </section>
     <br>
     <div class="jumbotron">
         <h1></h1>
-        <h5>Realize o cadastro de novos produtos para ficarem disponíveis na sua cantina !
+        <h5>Atualize os dados de cadastro dos responáveis dos responsáveis!
         </h5>
     </div>
     </div>
     <br>
-    <section>
+    <Section>
         <div class="row">
             <div class="col">
                 <div class="col-sm-6 offset-md-3">
-                    <form name="register_products_form" method="post" enctype="multipart/form-data"
-                        action="register_products_form">
+                    <form name="edit_responsible_form" id="edit_responsible_form" method="POST" action="edit_responsible_form">
                         <div class="form-group">
-                            <label for="inputProductName">Nome</label>
-                            <input required name="name" class="form-control" id="inputProductName"
-                                placeholder="Nome do produto">
+                            <label for="inputResponsibleName">Nome</label>
+                            <input name="name" class="form-control" id="inputResponsibleName"
+                                placeholder="Nome do responsavel" value="<?php echo $responsibleList->getName() ?>">
                         </div>
                         <div class="py-3">
-                            <div class="form-group">
-                                <label for="inputProductDesciption">Descrição</label>
-                                <input required name="description" class="form-control" id="inputProductDesciption"
-                                    placeholder="Descrição do produto">
-                            </div>
                             <div class="py-3">
                                 <div class="form-group">
-                                    <label for="InputValueProduct">Valor</label>
-                                    <input required name="price" type="number" class="form-control"
-                                        id="InputValueProduct" placeholder="Ex. R$10,00">
+                                    <label for="inputResponsibleTelefone">Telefone</label>
+                                    <input required name="phone" class="form-control" id="inputResponsibleTelefone"
+                                        placeholder="(00)00000-0000" value="<?php echo $responsibleList->getPhone() ?>">
                                 </div>
                                 <div class="py-3">
                                     <div class="form-group">
-                                        <label for="InputQuantityProduct">Quantidade</label>
-                                        <input required name="quantity" type="number" class="form-control"
-                                            id="InputQuantityProduct" placeholder="Ex. 10">
+                                        <label for="InputTypeDocument">Tipo do Documento</label>
+                                        <select required id="InputTypeDocument" name="documentType">
+                                            <option value="RG">RG</option>
+                                            <option value="CPF">CPF</option>
+                                        </select>
                                     </div>
                                 </div>
                                 <div class="py-3">
                                     <div class="form-group">
-                                        <label for="InputSingUpPassword1">Foto</label>
-                                        <input required name="image" type="file" class="form-control"
-                                            id="InputPictureProduct" placeholder="Senha">
+                                        <label for="InputNumberDocument">Número</label>
+                                        <input required name="document" type="number" class="form-control"
+                                            id="InputNumberDocument" placeholder="Número do Documento" 
+                                            value="<?php echo $responsibleList->getDocument() ?>"
+                                        >
                                     </div>
-                                    <div class="container">
-                                        <div class="row justify-content-center">
-                                            <div class="col-4">
-                                                <button class="btn btn-primary" type="submit">Cadastrar</button>
-                                            </div>
+                                </div>
+                                <div class="container">
+                                    <div class="row justify-content-center">
+                                        <div class="col-4">
+                                            <button class="btn btn-primary mt-4" type="submit">Atualizar</button>
                                         </div>
                                     </div>
+                                </div>
                     </form>
                 </div>
             </div>
         </div>
         </div>
-    </section>
+        </div>
+    </Section>
     <footer class="footer mt-5 py-5">
         <div class="containerfoot">
             <div class="row justify-content-center">

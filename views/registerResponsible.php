@@ -58,7 +58,7 @@ if (isset($_GET['is_success_registration'])) {
                     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                     <div class="slideout-sidebar">
                         <ul>
-                            <li><a href="Cantina.html">Home</a></li>
+                            <li><a href="canteen">Home</a></li>
                             <li><a href="Cantina-Produtos-Historico.html">Gerenciamento de Produtos</a></li>
                             <li><a href="Cantina-Responsaveis-Historico.html">Gerenciamento de Responsaveis</a></li>
                             <li><a href="index.html">Sair</a></li>

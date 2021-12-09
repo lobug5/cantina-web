@@ -11,7 +11,7 @@ class ResponsibleDAO
         try {
             $connection = Connection::getConexao();
 
-            $query = "select * from cantina_web.responsible";
+            $query = "select * from cantina_web.responsible where status = 1";
             $sql = $connection->prepare($query);
 
             $sql->execute();
@@ -75,12 +75,12 @@ class ResponsibleDAO
         
         try{
             $connection = Connection::getConexao();
-
-            $query = "delete from responsible where id = :id";
+            
+            $query = "update cantina_web.responsible SET status= 0 where id = :id";
             $sql = $connection->prepare($query);
-
-            $sql->bindParam("id", $id);
-
+            
+            $sql->bindParam("id", $id, PDO::PARAM_INT);
+            
             $sql->execute();
 
             return true;
@@ -107,7 +107,7 @@ class ResponsibleDAO
             $name =  $responsible->getName();
             $phone =  $responsible->getPhone();
             
-            $sql->bindParam("id", $id);
+            $sql->bindParam("id", $id, PDO::PARAM_INT);
             $sql->bindParam("document", $document);
             $sql->bindParam("type_document", $type_document);
             $sql->bindParam("name", $name);

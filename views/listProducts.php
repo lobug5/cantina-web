@@ -30,7 +30,7 @@
           <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
           <div class="slideout-sidebar">
             <ul>
-              <li><a href="Cantina.html">Home</a></li>
+              <li><a href="canteen">Home</a></li>
               <li><a href="list_responsibles">Gerenciamento de Responsáveis</a></li>
               <li><a href="index.html">Sair</a></li>
             </ul>

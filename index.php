@@ -57,8 +57,13 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador->editResponsiblesForm();
       break;
     case "edit_responsible";
-      require"controllers/editResponsible.php";
+      require "controllers/editResponsible.php";
       $controlador = new EditResponsible();
+      $controlador->processRequest();
+      break;
+    case "delete_responsible";
+      require "controllers/deleteResponsible.php";
+      $controlador = new DeleteResponsible();
       $controlador->processRequest();
       break;
     case "register_student_form":
