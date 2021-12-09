@@ -112,7 +112,28 @@ if (isset($_GET['is_success_registration'])) {
     </tbody>
   </table>
   
-  </footer>
+  <footer class="footer mt-5 py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-4">
+                    <h4 class="footer-title">
+                        Endereço
+                    </h4>
+                    <h6 class="footer-title">
+                        Rua x, numero 39
+                    </h6>
+                </div>
+                <div class="col-4">
+                    <h4 class="footer-title">
+                        Fale conosco
+                    </h4>
+                    <h6 class="footer-title">
+                        (71) 99999-9999
+                    </h6>
+                </div>
+            </div>
+        </div>
+    </footer>
 
   <script type="text/javascript">
     function Mudarestado(el) {

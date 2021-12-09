@@ -60,12 +60,8 @@ if (isset($_GET['is_success_registration'])) {
                     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                     <div class="slideout-sidebar">
                         <ul>
-                            <li><a href="Responsavel.html">Home</a></li>
-                            <li><a href="Responsavel-Cardapio.html">Cardápio</a></li>
                             <li><a href="Responsavel-Deposito.html">Depósito</a></li>
-                            <li><a href="Responsavel-Extrato.html">Extrato</a></li>
-                            <li><a href="Responsavel-Historico-Aluno.html">Histórico dos Alunos</a></li>
-                            <li><a href="index.html">Sair</a></li>
+                            <li><a href="home">Sair</a></li>
                         </ul>
                     </div>
                 </nav>
@@ -85,6 +81,7 @@ if (isset($_GET['is_success_registration'])) {
     </div>
 
     <br>
+    
     <form>
         <div class="row">
             <div class="col positionButtons">
@@ -93,7 +90,7 @@ if (isset($_GET['is_success_registration'])) {
                         <img src="assets/images/icon_plus.svg" alt="+" />
                     </div>
                     <div class="textStyle">
-                        <p><a href="list_students">Lista de alunos cadastrados</a></p>
+                        <p><a href="list_students">Lista de Alunos Cadastrados</a></p>
                     </div>
                 </div>
             </div>
@@ -159,7 +156,7 @@ if (isset($_GET['is_success_registration'])) {
                         Endereço
                     </h4>
                     <h6 class="footer-title">
-                        Rua x, numero 39
+                        Rua Santo Antônio, número 39
                     </h6>
                 </div>
                 <div class="col-4">
@@ -167,12 +164,12 @@ if (isset($_GET['is_success_registration'])) {
                         Fale conosco
                     </h4>
                     <h6 class="footer-title">
-                        (71) 99999-9999
+                        (71) 99515-9412
                     </h6>
                 </div>
             </div>
         </div>
-    </footer>
+  </footer>
 
     <script type="text/javascript">
     function Mudarestado(el) {
