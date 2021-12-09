@@ -16,8 +16,7 @@ class DeleteProduct implements IControlador
         try {
 
             if (isset($_GET['id'])) {
-
-                echo $_GET['id'];
+                
                 $this->product->deleteProduct($_GET['id']);
             }
 

@@ -95,10 +95,12 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       require "controllers/deleteProduct.php";
       $controlador = new DeleteProduct();
       $controlador->processRequest();
+      break;
     case "edit_product_form";
-      require"controllers/editProduct.php";
+      require "controllers/editProduct.php";
       $controlador = new EditProduct();
       $controlador->editProductsForm();
+      break;
     case "edit_product";
       require "controllers/editProduct.php";
       $controlador = new EditProduct();

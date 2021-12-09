@@ -26,7 +26,7 @@ class EditResponsible implements IControlador
         try {
 
             if (isset($_POST['name']) && isset($_POST['phone']) && isset($_POST['documentType']) && isset($_POST['document'])) {
-
+                
                 $idResp = intval($_POST["idResponsible"]);
                 
                 $this->responsible->setId($idResp);

@@ -22,25 +22,26 @@ if (isset($_GET['is_success_registration'])) {
     <link rel="stylesheet" href="js.js">
 
     <script>
-    $(document).ready(function() {
-        if (<?php echo $isSuccessRegistration ?>) {
-            $('#notification_registration').fadeIn(1000);
-            setTimeout(function() {
-                $('#notification_registration').fadeOut(1000);
-            }, 3000);
-        }
-    });
 
-    function confirmDeleteProduct(){ 
-      return confirm('Tem certeza que quer apagar este produto?');
-    }
+       function confirmDeleteResponsible(){ 
+        return confirm('Tem certeza que quer apagar este produto?');
+      }
+
+      $(document).ready(function() {
+          if (<?php echo $isSuccessRegistration ?>) {
+              $('#notification_registration').fadeIn(1000);
+              setTimeout(function() {
+                  $('#notification_registration').fadeOut(1000);
+              }, 1000);
+          }
+      });
     </script>
 </head>
 
 <body>
 
   <section class="section-top">
-  <div class="notification">
+    <div class="notification">
         <div class="container">
             <div class="alert alert-primary" id="notification_registration" style="display:none;">
                 Edição realizada com sucesso !
@@ -102,7 +103,7 @@ if (isset($_GET['is_success_registration'])) {
            <td><?php echo $responsibleList[$i]->getPhone(); ?></td>
            <td> 
           <a href="edit_responsible?id=<?php echo $responsibleList[$i]->getId(); ?>" style="background-color:black;"><i class="fas fa-edit"></i></a>
-          <a onclick="return confirmDeleteProduct();" href="delete_responsible?id=<?php echo $responsibleList[$i]->getId(); ?>" style="background-color:black;" ><i class="fas fa-user-minus"></i></a>
+          <a onclick="return confirmDeleteResponsible();" href="delete_responsible?id=<?php echo $responsibleList[$i]->getId(); ?>" style="background-color:black;" ><i class="fas fa-user-minus"></i></a>
         </td></a>
            <td>
            </td>

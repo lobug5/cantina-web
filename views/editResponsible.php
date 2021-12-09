@@ -18,15 +18,6 @@
 
 <body>
     <section class="section-top">
-
-        <div class="notification">
-            <div class="container">
-                <div class="alert alert-primary" id="notification_registration" style="display:none;">
-                    Edição realizada com sucesso !
-                </div>
-            </div>
-        </div>
-
         <nav class="navbar navbar-expand-xl navbar-togglable">
             <div class="container-fluid">
                 <div class="logo">
