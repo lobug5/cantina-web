@@ -118,12 +118,15 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
     break;
     case "edit_student_form";
       require "controllers/editStudent.php";
-      $controlador = new EditStudent();
+      echo "entrei aqui ";
+      $controlador = new Aleatorio();
       $controlador->editStudentForm();
+      break;
     case "edit_student";
       require "controllers/editStudent.php";
-      $controlador = new EditStudent();
+      $controlador = new Aleatorio();
       $controlador->processRequest();
+      break;
     default:
       require "controllers/home.php";
       $controlador = new Home();

@@ -2,7 +2,7 @@
 require_once "IControlador.php";
 require_once "models/student.php";
 
-class EditStudent implements IControlador
+class Aleatorio implements IControlador
 {
     private $student;
 
@@ -20,22 +20,23 @@ class EditStudent implements IControlador
     public function editStudentForm()
     {
         try {
+            echo $_GET['id'];
+            if (isset($_POST['name']) && isset($_POST['last_name']) && isset($_POST['registration']) && isset($_POST['cpf']) && isset($_POST['idResponsible']) 
+            && isset($_GET['id']) ) {
 
-            if (isset($_POST['name']) && isset($_POST['last_name']) && isset($_POST['registration']) && isset($_POST['cpf']) && isset($_GET['id'])) {
-
-                $idStudent = intval($_POST["idStudent"]);
-
-                $this->student->setId($idStudent);
+                $this->student->setId($_GET["id"]);
                 $this->student->setName($_POST['name']);
                 $this->student->setLastName($_POST['last_name']);
                 $this->student->setRegistration($_POST['registration']);
                 $this->student->setCpf($_POST['cpf']);
+                $this->student->setIdResponsible($_POST['idResponsible']);
 
                 $this->student->editStudent();
                 echo "oi";
+                echo $idStudent;
             }
-
-            header('Location:list_students?is_success_registration=true', true, 302);
+                
+     //       header('Location:list_students?is_success_registration=true', true, 302);
         } catch (string $e) {
             echo "oi";
             header('Location:list_students?is_success_registration=false', true, 302);
