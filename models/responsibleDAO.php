@@ -151,4 +151,5 @@ class ResponsibleDAO
             return array();
         }
     }
+    
 }
