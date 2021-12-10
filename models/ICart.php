@@ -2,7 +2,7 @@
 
 // INTERFACE
 
-interface ICarrinho{
+interface ICart{
     public function addProduct($item);
     public function updateCart($item);
     public function deleteProductCart($id);
@@ -10,5 +10,3 @@ interface ICarrinho{
     public function getItensCart();
     public function inCart($id);
 }
-
-?>
