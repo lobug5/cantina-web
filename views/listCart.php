@@ -67,15 +67,15 @@
           <td><?php echo $item->getProduct()->getName(); ?></td>
           <td>R$ <?php echo number_format($item->getProduct()->getUnitPrice(), 2, ',', '.'); ?></td>
           <td>
-            <form action="UpdateQtdCart" method="post">
+            <form action="update_qtd_cart" method="post">
               <input type="hidden" name="id" value="<?php echo $item->getProduct()->getId(); ?>">
-              <input type="text" name="quatity" value="<?php echo $item->getQuantity(); ?>" size="2">
+              <input type="text" name="quantity" value="<?php echo $item->getQuantity(); ?>" size="2">
               <button type="submit" class="btn btn-primary btn-xs">Alterar</button>
             </form>
           </td>
           <td>R$ <?php echo number_format($item->getTotalPartial(), 2, ',', '.'); ?></td>
           <td>
-            <form method="post" action="DeleteCartItem">
+            <form method="post" action="delete_item_cart">
               <input type="hidden" name="id" value="<?php echo $item->getProduct()->getId(); ?>">
               <input type="submit" class="btn btn-danger btn-sm" value="Excluir">
             </form>
