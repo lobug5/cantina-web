@@ -1,40 +1,50 @@
-<?php 
+<?php
 
 require_once "product.php";
 
-class CartItem{
+class CartItem
+{
 
     private $product;
     private $quantity;
 
-    public function __construct($id, $quantity){
+    public function __construct($id, $quantity)
+    {
         $this->product = new Product();
-        $this->product->setId($id);
-        $this->product->getProductById();
+        $product = $this->product->getProductById($id);
+
+        echo $product->getName();
+        $this->product->setName($product->getName());
+        $this->product->setQuantity($product->getQuantity());
+        $this->product->setUnitPrice($product->getUnitPrice());
+        $this->product->setId($product->getId());
+        $this->product->setImage($product->getImage());
+
         $this->quantity = $quantity;
     }
 
-    public function getProduct(){
+    public function getProduct()
+    {
         return $this->product;
-    }   
+    }
 
-    public function setProduct($product){
+    public function setProduct($product)
+    {
         $this->product = $product;
     }
 
-    public function getQuantity(){
+    public function getQuantity()
+    {
         return $this->quantity;
-    } 
+    }
 
-    public function setQuantity($quantity){
+    public function setQuantity($quantity)
+    {
         $this->quatity = $quantity;
     }
 
-    public function getTotalPartial(){
+    public function getTotalPartial()
+    {
         return $this->product->getUnitPrice() * $this->quantity;
     }
-
-
 }
-
-?>

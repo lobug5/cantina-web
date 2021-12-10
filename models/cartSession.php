@@ -1,7 +1,7 @@
 <?php
 
 require_once "ICart.php";
-require_once "CartItem.php";
+require_once "cartItem.php";
 
 class CartSession implements ICart
 {

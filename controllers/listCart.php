@@ -1,7 +1,7 @@
 <?php
 
-require_once "models/CartSession.php";
-require_once "models/CartItem.php";
+require_once "models/cartSession.php";
+require_once "models/cartItem.php";
 require_once "IControlador.php";
 
 
@@ -18,8 +18,8 @@ class ListCarts implements IControlador
     public function processRequest()
     {
 
-        $CartItem = $this->cart->getItensCart();
-        $cart = $this->cart;
+        $CartItem = $this->cartSession->getItensCart();
+        $cart = $this->cartSession;
         require "views/listCart.php";
     }
 }

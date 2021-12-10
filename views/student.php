@@ -60,21 +60,26 @@
                                 <?php echo $products[$i]->getDescription(); ?>
                             </small> </p>
                         <p class="card-text"><strong class="text-info"><?php echo "R$ " . number_format($products[$i]->getUnitPrice(), 2, ',');  ?></strong></p>
-                        <form action="/action_page.php">
+                        <form method="post" action="add_item_cart">
                             <label for="quantity"></label>
-                            <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1" placeholder="0">
+                            <input type="hidden" name="id" value="<?php echo $products[$i]->getId(); ?>">
+                            <input class="inptQuantidade" type="quantity" id="quantity" name="quantity" min="1" placeholder="0">
+                            <button class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                                Comprar
+                            </button>
                         </form>
-                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
-                            Comprar
-                        </button>
                     </div>
                 </div>
             <?php } ?>
 
         </div>
 
-        <button id="Butão" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
-        <button id="Butão" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>
+        <form method="post" action="add_item_cart">
+            <button id="Butão" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
+        </form>
+        <form method="post" action="add_item_cart">
+            <button id="Butão" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>
+        </form>
         <footer class="footer mt-5 py-5">
             <div class="containerfoot">
                 <div class="row justify-content-center">
