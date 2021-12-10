@@ -11,11 +11,9 @@ class listProducts implements IControlador
         $this->product = new Product();
     }
 
-    public function processRequest(){
-        $productList = $this -> product -> getProducts();
+    public function processRequest()
+    {
+        $productList = $this->product->getProducts();
         require "views/listProducts.php";
     }
-
 }
-
-?>

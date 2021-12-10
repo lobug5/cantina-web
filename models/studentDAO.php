@@ -97,7 +97,7 @@ class studentDAO
             $connection = Connection::getConexao();
             
             $query = "update cantina_web.student SET name = :name, last_name = :last_name, 
-                    registration = :registration, cpf = :cpf WHERE id = :id";
+                    registration = :registration, cpf = :cpf, idResponsible: idResponsible WHERE id = :id";
                     
             $sql = $connection->prepare($query);
             
@@ -106,11 +106,13 @@ class studentDAO
             $last_name =  $student->getLastName();
             $registration =  $student->getRegistration();
             $cpf =  $student->getCpf();
+            $idResponsible =  $student->getIdResponsible();
             
             $sql->bindParam("name", $name);
             $sql->bindParam("last_name", $last_name);
             $sql->bindParam("registration", $registration);
             $sql->bindParam("cpf", $cpf);
+            $sql->bindParam("idResponsible", $idResponsible);
             
             $sql->execute();
 

@@ -86,7 +86,7 @@ if (isset($_GET['is_success_registration'])) {
     <br>
 
     <div class="container-fluid">
-        <form name="edit_student_form" method="post" action="edit_student_form">
+        <form name="edit_student_form" id="edit_student_form" method="post" action="edit_student_form <?php echo $studentList->getId() ?>">
             <h4><span>Editar Aluno</span><h4>
                     <br>
                     <div class="row">
@@ -94,7 +94,7 @@ if (isset($_GET['is_success_registration'])) {
                             <input required type="text" class="form-control" placeholder="Nome" name="name" value="<?php echo $studentList->getName() ?>">
                         </div>
                         <div class="col">
-                            <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName" value="<?php echo $studentList->getLastName() ?>">
+                            <input required type="text" class="form-control" placeholder="Sobrenome" name="last_name" value="<?php echo $studentList->getLastName() ?>">
                         </div>
                     </div>
                     <br>
