@@ -63,9 +63,10 @@ class ProductDAO
         }
     }
 
-    public function deleteProduct($id){
-        
-        try{
+    public function deleteProduct($id)
+    {
+
+        try {
             $connection = Connection::getConexao();
 
             $query = "update cantina_web.products SET status= 0 where id = :id";
@@ -76,7 +77,6 @@ class ProductDAO
             $sql->execute();
 
             return true;
-
         } catch (PDOException $e) {
             echo $e;
             return false;
@@ -87,25 +87,25 @@ class ProductDAO
     {
         try {
             $connection = Connection::getConexao();
-            
+
             $query = "update cantina_web.products SET name = :name, description = :description,
                 quantity = :quantity, unit_price = :unit_price, image = :image WHERE id = :id";
             $sql = $connection->prepare($query);
-            
+
             $id =  $product->getId();
             $name =  $product->getName();
             $description =  $product->getDescription();
             $quantity =  $product->getQuantity();
             $unitPrice =  $product->getUnitPrice();
             $image =  $product->getImage();
-            
+
             $sql->bindParam("id", $id);
             $sql->bindParam("name", $name);
             $sql->bindParam("description", $description);
             $sql->bindParam("quantity", $quantity);
             $sql->bindParam("unit_price", $unitPrice);
             $sql->bindParam("image", $image);
-            
+
             $sql->execute();
 
             return true;
@@ -144,5 +144,4 @@ class ProductDAO
             return array();
         }
     }
-
 }

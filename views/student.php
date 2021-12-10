@@ -22,8 +22,7 @@
             <nav class="navbar navbar-expand-xl navbar-togglable">
                 <div class="container-fluid">
                     <div class="logo">
-                        <a href="index.html"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png"
-                                alt="logo"></a>
+                        <a href="index.html"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png" alt="logo"></a>
                         <h1 class="title-logo"><span>CANTINA</span>WEB</h1>
                     </div>
                     <nav>
@@ -52,125 +51,28 @@
         </div>
 
         <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/coxinha.png" alt="coxinhadefrango">
-                <div class="card-body">
-                    <h5 class="card-title">Coxinha de Frango</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum ligula ut est integer curae sapien
-                            adipiscing, non
-                            tempor at vivamus phasellus inceptos.</small> </p>
-                    <p class="card-text"><strong class="text-info">R$7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Comprar
-                    </button>
+            <?php for ($i = 0; $i < count($products); $i++) { ?>
+                <div class="card">
+                    <?php echo '<img class="card-img-top" src="data:image/jpeg;base64,' . base64_encode($products[$i]->getImage()) . '" />'; ?>
+                    <div class="card-body">
+                        <h5 class="card-title"><?php echo $products[$i]->getName(); ?></h5>
+                        <p class="card-text"><small class="text-dark">
+                                <?php echo $products[$i]->getDescription(); ?>
+                            </small> </p>
+                        <p class="card-text"><strong class="text-info"><?php echo "R$ " . number_format($products[$i]->getUnitPrice(), 2, ',');  ?></strong></p>
+                        <form action="/action_page.php">
+                            <label for="quantity"></label>
+                            <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1" placeholder="0">
+                        </form>
+                        <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false" autocomplete="off">
+                            Comprar
+                        </button>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="assets/images/salada de frutas.png" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Salada de frutas</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum faucibus potenti lobortis nisi lorem sed
-                            enim,
-                            suscipit imperdiet himenaeos nec hendrerit aptent.</small> </p>
-                    <p class="card-text"><strong class="text-info">R$7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="0"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Comprar
-                    </button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="assets/images/sanduichenatural.png" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Sanduiche Natural de Frango</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum quis nulla sit pharetra faucibus cursus
-                            bibendum, eu
-                            tortor semper fermentum lorem arcu.</small> </p>
-                    <p class="card-text"><strong class="text-info">7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="0"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Adicionar
-                    </button>
-                </div>
-            </div>
+            <?php } ?>
+
         </div>
 
-
-        <div class="card-deck">
-            <div class="card">
-                <img class="card-img-top" src="assets/images/coca.png" alt="coxinhadefrango">
-                <div class="card-body">
-                    <h5 class="card-title">Coca Cola</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum ligula ut est integer curae sapien
-                            adipiscing, non
-                            tempor at vivamus phasellus inceptos.</small> </p>
-                    <p class="card-text"><strong class="text-info">R$7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Adicionar
-                    </button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="assets/images/sucomanga.png" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Suco de Manga</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum faucibus potenti lobortis nisi lorem sed
-                            enim,
-                            suscipit imperdiet himenaeos nec hendrerit aptent.</small> </p>
-                    <p class="card-text"><strong class="text-info">R$7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1" max="5"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Adicionar
-                    </button>
-                </div>
-            </div>
-            <div class="card">
-                <img class="card-img-top" src="assets/images/mingaudeaveia.png" alt="Imagem de capa do card">
-                <div class="card-body">
-                    <h5 class="card-title">Mingau de Aveia</h5>
-                    <p class="card-text"><small class="text-dark">Lorem ipsum quis nulla sit pharetra faucibus cursus
-                            bibendum, eu
-                            tortor semper fermentum lorem arcu.</small> </p>
-                    <p class="card-text"><strong class="text-info">7,00</strong></p>
-                    <form action="/action_page.php">
-                        <label for="quantity"></label>
-                        <input class="inptQuantidade" type="number" id="quantity" name="quantity" min="1"
-                            placeholder="0">
-                    </form>
-                    <button type="button" class="btn btn-primary" data-toggle="button" aria-pressed="false"
-                        autocomplete="off">
-                        Adicionar
-                    </button>
-                </div>
-            </div>
-        </div>
         <button id="Butão" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
         <button id="Butão" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>
         <footer class="footer mt-5 py-5">
