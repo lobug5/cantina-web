@@ -59,10 +59,25 @@ class Deposit
     {
         return $this->idStudent;
     }
+    public function setNameStudent($nameStudent)
+    {
+        $this->nameStudent = $nameStudent;
+    }
+
+    public function getNameStudent()
+    {
+        return $this->nameStudent;
+    }
 
     public function addDeposit()
     {
         $deposit = new DepositDAO();
-        $deposit->setDeposit($this);
+        $deposit->addDeposit($this);
+    }
+
+    public function getDeposits()
+    {
+        $deposit = new DepositDAO();
+        return $deposit->getDeposits();
     }
 }

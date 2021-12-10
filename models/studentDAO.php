@@ -150,5 +150,34 @@ class studentDAO
         }
     }
 
+    public function getStudentByIdResponsible($idResponsible)
+    {
+        try {
+            $connection = Connection::getConexao();
+
+            $query = "select * from cantina_web.student where idResponsible = :id";
+            $sql = $connection->prepare($query);
+
+            $sql->bindParam("id", $idResponsible);
+
+            $sql->execute();
+            $sql->setFetchMode(PDO::FETCH_ASSOC);
+
+            $students = array();
+            while ($items = $sql->fetch(PDO::FETCH_ASSOC)) {
+                $student = new Student();
+                $student->setId($items['id']);
+                $student->setName($items['name']);
+                $student->setLastName($items['last_name']);
+                $student->setRegistration($items['registration']);
+                $student->setCpf($items['cpf']);
+                array_push($students, $student);
+            }
+            return $students;
+        } catch (PDOException $e) {
+            return array();
+        }
+    }
+
 
 }

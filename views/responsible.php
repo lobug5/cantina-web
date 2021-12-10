@@ -45,8 +45,6 @@ if (isset($_GET['is_success_registration'])) {
             </div>
         </div>
     </div>
-
-
     <section class="section-top">
         <nav class="navbar navbar-expand-xl navbar-togglable">
             <div class="container-fluid">
@@ -60,7 +58,8 @@ if (isset($_GET['is_success_registration'])) {
                     <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                     <div class="slideout-sidebar">
                         <ul>
-                            <li><a href="Responsavel-Deposito.html">Depósito</a></li>
+                            <li><a href="register_deposit">Depósito</a></li>
+                            <li><a href="list_historic_deposit">Histórico Depósito</a></li>
                             <li><a href="home">Sair</a></li>
                         </ul>
                     </div>

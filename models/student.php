@@ -123,5 +123,9 @@ class Student
         $studentDAO = new StudentDAO();
         return $studentDAO->getStudentById($id);
     }
+    public function getStudentByIdResponsible($idResponsible){
+        $studentDAO = new StudentDAO();
+        return $studentDAO->getStudentByIdResponsible($idResponsible);
+    }
 
 }
