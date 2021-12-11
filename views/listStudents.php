@@ -1,3 +1,10 @@
+<?php
+$isSuccessRegistration = false;
+
+if (isset($_GET['is_success_registration'])) {
+    $isSuccessRegistration = strtolower($_GET['is_success_registration']) === 'true' ? true : false;
+}
+?>
 <!DOCTYPE html>
 <html lang="Pt-Br">
 
@@ -13,11 +20,34 @@
     <link href="css/styles.css" rel="stylesheet">
     <script src="https://kit.fontawesome.com/3d7bdbec83.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="js.js">
+
+    <script>
+
+       function confirmDeleteResponsible(){ 
+        return confirm('Tem certeza que quer apagar este produto?');
+      }
+
+      $(document).ready(function() {
+          if (<?php echo $isSuccessRegistration ?>) {
+              $('#notification_registration').fadeIn(1000);
+              setTimeout(function() {
+                  $('#notification_registration').fadeOut(1000);
+              }, 1000);
+          }
+      });
+    </script>
 </head>
 
 <body>
 
   <section class="section-top">
+  <div class="notification">
+        <div class="container">
+            <div class="alert alert-primary" id="notification_registration" style="display:none;">
+                Cadastro realizado com sucesso !
+            </div>
+        </div>
+    </div>
     <nav class="navbar navbar-expand-xl navbar-togglable">
       <div class="container-fluid">
         <div class="logo">

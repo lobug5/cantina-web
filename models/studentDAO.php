@@ -46,24 +46,24 @@ class studentDAO
             $last_name =  $student->getLastName();
             $registration =  $student->getRegistration();
             $cpf =  $student->getCpf();
-            $idResponsible =  $student->getIdResponsible();
-
+            $idResponsible =  (int)$student->getIdResponsible();
+            
             $sql->bindParam("name", $name);
             $sql->bindParam("last_name", $last_name);
             $sql->bindParam("registration", $registration);
             $sql->bindParam("cpf", $cpf);
             $sql->bindParam("idResponsible", $idResponsible);
-
+            
             $sql->execute();
             $id = $connection->lastInsertId();
-
+            
             $auth = new Auth();
-
+            
             $auth->setEmail($student->getEmail());
             $auth->setPassword($student->getPassword());
             $auth->setPermission('student');
             $auth->setIdStudent($id);
-
+            
             return $auth->setAuth();
         } catch (PDOException $e) {
             echo $e;

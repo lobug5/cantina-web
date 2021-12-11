@@ -78,9 +78,7 @@ if (isset($_GET['is_success_registration'])) {
             oferecidos pela cantina da escola</h5>
     </div>
     </div>
-
-    <br>
-    
+    <br> 
     <form>
         <div class="row">
             <div class="col positionButtons">
@@ -93,60 +91,19 @@ if (isset($_GET['is_success_registration'])) {
                     </div>
                 </div>
             </div>
-        </div>
-    </form>
-    
-    <br>
-
-    <section>
-        <div class="row">
-            <div class="col">
-                <div class="col-sm-6 offset-md-3">
-                    <form name="register_student_form" method="post" action="register_student_form">
-                        <h5> Cadastre um novo aluno ! </h5>
-                        <div class="form-group">
-                            <label for="inputStudentName">Nome</label>
-                            <input required type="text" class="form-control" placeholder="Nome" name="name">
-                        </div>
-                        <div class="py-3">
-                            <div class="form-group">
-                                <label for="inputStudentLastName">Sobrenome</label>
-                                <input required type="text" class="form-control" placeholder="Sobrenome" name="lastName">
-                            </div>
-                        <div class="py-3">
-                            <div class="form-group">
-                                    <label for="InputStudentRegistration">Matrícula</label>
-                                    <input required type="text" class="form-control" placeholder="Matricula" name="registration">
-                            </div>
-                        <div class="py-3">
-                            <div class="form-group">
-                                <label for="InputStudentCpft">CPF</label>
-                                <input required type="text" class="form-control" placeholder="CPF" name="cpf">
-                            </div>
-                        <div class="py-3">
-                            <div class="form-group">
-                                    <label for="InputStudentEmail">Email</label>
-                                    <input required type="text" class="form-control" placeholder="Email" name="email">
-                            </div>
-                        <div class="py-3">
-                            <div class="form-group">
-                                <label for="inputStudentPassword">Senha</label>
-                                <input required type="password" class="form-control" placeholder="Senha" name="password">
-                            </div>
-                        </div>
-                        <div class="container">
-                            <div class="row justify-content-center">
-                                <div class="col-4">
-                                    <button class="btn btn-primary" type="submit">Enviar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </form>
+            <div class="col positionButtons">
+                <div class="buttonAddProdutos form-check-inline">
+                    <div class="iconeAddProdutos">
+                        <img src="assets/images/icon_plus.svg" alt="+" />
+                    </div>
+                    <div class="textStyle">
+                        <p><a href="register_students">Cadastrar Aluno</a></p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-
+    </form>
+    <br>
     <footer class="footer mt-5 py-5">
         <div class="container">
             <div class="row justify-content-center">
@@ -169,7 +126,6 @@ if (isset($_GET['is_success_registration'])) {
             </div>
         </div>
   </footer>
-
     <script type="text/javascript">
     function Mudarestado(el) {
         document.getElementById(el).classList.toggle('mostrar');

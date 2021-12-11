@@ -66,10 +66,15 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador = new DeleteResponsible();
       $controlador->processRequest();
       break;
-    case "register_student_form":
+    case "register_students":
       require "controllers/registerStudent.php";
       $controlador = new RegisterStudent();
       $controlador->processRequest();
+      break;
+    case "register_student_form":
+      require "controllers/registerStudent.php";
+      $controlador = new RegisterStudent();
+      $controlador->registerResponsibleForm();
       break;
     case "student":
       require "controllers/student.php";
@@ -145,6 +150,8 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
     case "list_historic_deposit";
       require "controllers/listHistoricDeposit.php";
       $controlador = new ListHistoricDeposit();
+      $controlador->processRequest();
+      break;
     case "cart";
       require "controllers/listCart.php";
       require_once "models/cartSession.php";

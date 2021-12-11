@@ -12,7 +12,14 @@ class listStudents implements IControlador
     }
 
     public function processRequest(){
-        $studentList = $this -> student -> getStudents();
+        if($_SESSION['auth_id_responsible']){
+            $idResponsible = (int)$_SESSION['auth_id_responsible'];
+            $studentList = $this -> student -> getStudentByIdResponsible($idResponsible);
+        }
+        else {
+            $studentList = $this -> student -> getStudents();
+        }   
+        
         require "views/listStudents.php";
     }
 

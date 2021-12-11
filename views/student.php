@@ -75,10 +75,10 @@
         </div>
 
         <form method="post" action="add_item_cart">
-            <button id="Butão" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
+            <button id="buttonStudent" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
         </form>
         <form method="post" action="add_item_cart">
-            <button id="Butão" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>
+            <button id="buttonStudent" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>
         </form>
         <footer class="footer mt-5 py-5">
             <div class="containerfoot">
