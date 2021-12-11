@@ -33,7 +33,7 @@
                             <li><a href="canteen">Home</a></li>
                             <li><a href="list_responsibles">Gerenciar Responsáveis</a></li>
                             <li><a href="list_products"> Gerenciar Produtos</a>
-                            <li><a href="Listagem-Alunos.html">Listagem de Alunos</a></li>
+                            <li><a href="list_students">Listagem de Alunos</a></li>
                             <li><a href="index.html">Sair</a></li>
                             </li>
                         </ul>

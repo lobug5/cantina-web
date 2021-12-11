@@ -35,7 +35,7 @@ class RegisterProducts implements IControlador
                 
             }
 
-            header('Location:register_products?is_success_registration=true', true, 302);
+            header('Location:list_products?is_success_registration=true', true, 302);
         } catch (string $e) {
             header('Location:register_products?is_success_registration=false', true, 302);
         }

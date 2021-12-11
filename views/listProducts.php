@@ -64,6 +64,7 @@ if (isset($_GET['is_success_registration'])) {
             <ul>
               <li><a href="canteen">Home</a></li>
               <li><a href="list_responsibles">Gerenciamento de Responsáveis</a></li>
+              <li><a href="list_students">Listagem de Alunos</a></li>
               <li><a href="index.html">Sair</a></li>
             </ul>
           </div>
