@@ -31,7 +31,7 @@
                         <div class="slideout-sidebar">
                             <ul>
                                 <li><a href="student">Home</a></li>
-                                <li><a href="Aluno-Historico.html">Histórico</a></li>
+                                <li><a href="list_historic_buy">Histórico</a></li>
                                 <li><a href="logout">Sair</a></li>
                             </ul>
                         </div>

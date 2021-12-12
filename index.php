@@ -190,6 +190,11 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador = new Home();
       $controlador->processRequest();
       break;
+    case "list_historic_buy";
+      require "controllers/ListHistoricBuy.php";
+      $controlador = new ListHistoricBuy();
+      $controlador->processRequest();
+      break;
   }
 } else
   $url = '404.php';
