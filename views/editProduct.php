@@ -20,7 +20,7 @@
         <nav class="navbar navbar-expand-xl navbar-togglable">
             <div class="container-fluid">
                 <div class="logo">
-                    <a href="index.html"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png"
+                    <a href="logout"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png"
                             alt="logo"></a>
                     <h1 class="title-logo"><span>CANTINA</span>WEB</h1>
                 </div>
@@ -32,7 +32,7 @@
                             <li><a href="canteen">Home</a></li>
                             <li><a href="list_products">Gerenciamento de Produtos</a></li>
                             <li><a href="list_responsibles">Gerenciamento de Responsaveis</a></li>
-                            <li><a href="index.html">Sair</a></li>
+                            <li><a href="logout">Sair</a></li>
                             </li>
                         </ul>
                     </div>

@@ -46,7 +46,7 @@ if (isset($_GET['is_success_registration'])) {
     <nav class="navbar navbar-expand-xl navbar-togglable">
       <div class="container-fluid">
         <div class="logo">
-          <a href="index.html"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png"
+          <a href="logout"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png"
               alt="logo"></a>
           <h1 class="title-logo"><span>RESPONSÁVEL</span>WEB</h1>
         </div>
@@ -58,7 +58,7 @@ if (isset($_GET['is_success_registration'])) {
                 <li><a href="responsible">Home</a></li>
                 <li><a href="register_deposit">Depósito</a></li>
                 <li><a href="list_historic_deposit">Histórico Depósito</a></li>
-                <li><a href="index.php">Sair</a></li>
+                <li><a href="logout.php">Sair</a></li>
             </ul>
           </div>
         </nav>

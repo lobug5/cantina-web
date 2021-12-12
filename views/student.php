@@ -22,7 +22,7 @@
             <nav class="navbar navbar-expand-xl navbar-togglable">
                 <div class="container-fluid">
                     <div class="logo">
-                        <a href="index.html"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png" alt="logo"></a>
+                        <a href="logout"><img class="navbar-brand-item light-mode-item" src="assets/images/logo.png" alt="logo"></a>
                         <h1 class="title-logo"><span>CANTINA</span>WEB</h1>
                     </div>
                     <nav>
@@ -30,9 +30,9 @@
                         <label for="menu-toggle" class="menu-icon"><i class="fa fa-bars"></i></label>
                         <div class="slideout-sidebar">
                             <ul>
-                                <li><a href="aluno.html">Home</a></li>
+                                <li><a href="student">Home</a></li>
                                 <li><a href="Aluno-Historico.html">Histórico</a></li>
-                                <li><a href="index.html">Sair</a></li>
+                                <li><a href="logout">Sair</a></li>
                             </ul>
                         </div>
                     </nav>
@@ -74,8 +74,8 @@
 
         </div>
 
-        <form method="post" action="add_item_cart">
-            <button id="buttonStudent" type="button" class="btn btn-primary btn-lg">Finalizar pedido</button>
+        <form method="post" action="cart">
+            <button id="buttonStudent" type="submit" class="btn btn-primary btn-lg">Finalizar pedido</button>
         </form>
         <form method="post" action="add_item_cart">
             <button id="buttonStudent" type="button" class="btn btn-secondary btn-lg">Cancelar pedido</button>

@@ -61,7 +61,7 @@ if (isset($_GET['is_success_registration'])) {
                             <li><a href="responsible">Home</a></li>
                             <li><a href="deposit">Depósito</a></li>
                             <li><a href="list_historic_deposit">Histórico Depósito</a></li>
-                            <li><a href="index.php">Sair</a></li>
+                            <li><a href="logout">Sair</a></li>
                             </li>
                         </ul>
                     </div>

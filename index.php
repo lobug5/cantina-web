@@ -180,6 +180,11 @@ if (isset($_GET['url'])) //se estiver preenchida, pega o valor
       $controlador = new DeleteCartItem($cartSession);
       $controlador->processRequest();
       break;
+    case "logout";
+      require "controllers/logout.php";
+      $controlador = new Login();
+      $controlador->processRequest();
+      break;
     default:
       require "controllers/home.php";
       $controlador = new Home();
