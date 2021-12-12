@@ -2,6 +2,8 @@
 require_once 'connection.php';
 include_once 'controllers/encrypt.php';
 include_once 'models/deposit.php';
+include_once 'models/wallet.php';
+include_once 'models/walletDAO.php';
 
 
 class DepositDAO
@@ -17,7 +19,7 @@ class DepositDAO
             $date_deposit =  $deposit->getDateDeposit();
             $price =  $deposit->getPrice();
             $idResponsible =  $deposit->getIdResponsible();
-            $idStudent =  $deposit->getIdStudent();
+            $idStudent =  (int)$deposit->getIdStudent();
             
             $sql->bindParam("date_deposit", $date_deposit);
             $sql->bindParam("price", $price);
@@ -25,6 +27,39 @@ class DepositDAO
             $sql->bindParam("idStudent", $idStudent);
 
             $sql->execute();
+
+            $wallet = new Wallet();
+
+            $studentWallet = $wallet->getBalanceById($idStudent);
+            
+            if(!$studentWallet) {
+                
+                $query = "insert into cantina_web.wallet (balance, idResponsible, idStudent) values (:balance, :idResponsible, :idStudent)";
+                $sql = $connection->prepare($query);
+
+                $balance = (int)$deposit->getPrice();
+                $id_responsible = (int) $deposit->getIdResponsible();
+                $id_student = (int)$deposit->getIdStudent();
+
+                $sql->bindParam("balance", $balance);
+                $sql->bindParam("idResponsible", $idResponsible);
+                $sql->bindParam("idStudent", $idStudent);
+
+                $sql->execute();
+
+            }
+            else {
+                $query = "update cantina_web.wallet SET balance = :balance where idStudent = :idStudent";
+                $sql = $connection->prepare($query);
+
+                $balance = (int)$studentWallet->getBalance() + (int)$deposit->getPrice();
+                $id_student = (int)$deposit->getIdStudent();
+                
+                $sql->bindParam("balance", $balance);
+                $sql->bindParam("idStudent", $id_student, PDO::PARAM_INT);
+                
+                $sql->execute();
+            }
 
             return true;
         } catch (PDOException $e) {

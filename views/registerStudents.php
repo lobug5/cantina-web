@@ -59,9 +59,9 @@ if (isset($_GET['is_success_registration'])) {
                     <div class="slideout-sidebar">
                         <ul>
                             <li><a href="canteen">Home</a></li>
-                            <li><a href="list_products">Gerenciamento de Produtos</a></li>
-                            <li><a href="list_responsibles">Gerenciamento de Responsaveis</a></li>
-                            <li><a href="index.html">Sair</a></li>
+                            <li><a href="register_deposit">Depósito</a></li>
+                            <li><a href="list_historic_deposit">Histórico Depósito</a></li>
+                            <li><a href="home">Sair</a></li>
                             </li>
                         </ul>
                     </div>
@@ -120,7 +120,7 @@ if (isset($_GET['is_success_registration'])) {
                         <div class="container">
                             <div class="row justify-content-center">
                                 <div class="col-4">
-                                    <button class="btn btn-primary" type="submit">Enviar</button>
+                                    <button class="btn btn-primary" type="submit">Cadastrar</button>
                                 </div>
                             </div>
                         </div>

@@ -42,8 +42,8 @@
 
         <div class="container">
             <div class="jumbotron">
-                <h1>Seu saldo é:</h1>
-                <div id="minhaDiv">R$500,00</div>
+                <h1>Seu saldo é: </h1>
+                <div id="minhaDiv"><?php echo "R$" . number_format($walletStudent->getBalance(), 2, ',', ' '); ?></div>
                 <p> </p>
                 <p> </p>
                 <h5>Faça seu pedido na opção comprar e retire no caixa quando sua matrícula for chamada!</h5>
@@ -59,7 +59,7 @@
                         <p class="card-text"><small class="text-dark">
                                 <?php echo $products[$i]->getDescription(); ?>
                             </small> </p>
-                        <p class="card-text"><strong class="text-info"><?php echo "R$ " . number_format($products[$i]->getUnitPrice(), 2, ',');  ?></strong></p>
+                        <p class="card-text"><strong class="text-info"><?php echo "R$ " . number_format($products[$i]->getUnitPrice(), 2, ',', ' ');  ?></strong></p>
                         <form method="post" action="add_item_cart">
                             <label for="quantity"></label>
                             <input type="hidden" name="id" value="<?php echo $products[$i]->getId(); ?>">
