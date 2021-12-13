@@ -16,7 +16,7 @@ class BuyDAO
                 A.quantity,
                 A.value_total,
                 B.name,
-                C.name
+                C.name as nameProduct
             from cantina_web.buy A 
             inner join student B 
             ON A.idStudent = B.id 
@@ -32,7 +32,7 @@ class BuyDAO
                 $buy = new Buy();
                 $buy->setQuantity($items['quantity']);
                 $buy->setValueTotal($items['value_total']);
-                $buy->setNameProduct($items['name']);
+                $buy->setNameProduct($items['nameProduct']);
                 $buy->setNameStudent($items['name']);
                 array_push($buys, $buy);
             }

@@ -47,21 +47,24 @@ class Buy{
         $this->nameProduct = $nameProduct;
     }
 
-
     public function getQuantity(){
         return $this->quantity;
-    } 
+    }   
 
     public function setQuantity($quantity){
-        $this->quatity = $quantity;
+        $this->quantity = $quantity;
     }
+
     public function getValueTotal(){
         return $this->value_total;
-    } 
+    }   
 
     public function setValueTotal($value_total){
-        $this->quatity = $value_total;
+        $this->value_total = $value_total;
     }
+
+
+    
 
     public function getBuys()
     {
