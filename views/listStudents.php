@@ -89,7 +89,10 @@ if (isset($_GET['is_success_registration'])) {
                 <th>Sobrenome</th>
                 <th>N° Matricula</th>
                 <th>CPF</th>
-                <th>Ações</th>
+                <?php 
+                  if($permission != 'school') { ?>
+                     <th>Ações</th>
+                <?php } ?>
             </tr>
         </thead>
         <?php for($i=0;$i<count($studentList);$i++){ ?>
@@ -99,13 +102,16 @@ if (isset($_GET['is_success_registration'])) {
             <td><?php echo $studentList[$i]->getLastName(); ?></td>
             <td><?php echo $studentList[$i]->getRegistration(); ?></td>
             <td><?php echo $studentList[$i]->getCpf(); ?></td>
-                
-            <td>
-              <a href="edit_student?id=<?php echo $studentList[$i]->getId(); ?>"><i class="fas fa-edit"></i></a>
-              <a href="delete_student?id=<?php echo $studentList[$i]->getId(); ?>"><i class="fas fa-user-minus"></i></a>
-              </td></a>
-              <td>
-              </td>
+            
+            <?php 
+              if($permission != 'school') { ?>
+                <td>
+                  <a href="edit_student?id=<?php echo $studentList[$i]->getId(); ?>"><i class="fas fa-edit"></i></a>
+                  <a href="delete_student?id=<?php echo $studentList[$i]->getId(); ?>"><i class="fas fa-user-minus"></i></a>
+                  </td></a>
+                  <td>
+                  </td>
+            <?php } ?>
           </tr>  
         <?php } ?>
    
