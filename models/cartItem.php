@@ -45,6 +45,6 @@ class CartItem
 
     public function getTotalPartial()
     {
-        return $this->product->getUnitPrice() * $this->quantity;
+        return $this->product->getUnitPrice() * (int)$this->quantity;
     }
 }
