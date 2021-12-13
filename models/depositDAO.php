@@ -75,7 +75,7 @@ class DepositDAO
 
             $query = "
             select  
-                A.date_deposit,
+            DATE_FORMAT(A.date_deposit, '%d/%m/%Y %H:%m:%s') as date,
                 A.price,
                 A.idStudent,
                 B.name
@@ -92,7 +92,7 @@ class DepositDAO
             while ($items = $sql->fetch(PDO::FETCH_ASSOC)) {
                 $deposit = new Deposit();
                 $deposit->setNameStudent($items['name']);
-                $deposit->setDateDeposit($items['date_deposit']);
+                $deposit->setDateDeposit($items['date']);
                 $deposit->setPrice($items['price']);
                 $deposit->setIdStudent($items['idStudent']);
                 array_push($deposits, $deposit);
