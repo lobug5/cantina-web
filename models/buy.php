@@ -66,10 +66,10 @@ class Buy{
 
     
 
-    public function getBuys()
+    public function getBuys($idStudent)
     {
         $buy = new BuyDAO();
-        return $buy->getBuys();
+        return $buy->getBuys($idStudent);
     }
 
 }

@@ -12,7 +12,8 @@ class ListHistoricBuy implements IControlador
     }
 
     public function processRequest(){
-        $buyList = $this -> buy -> getBuys();
+        $idStudent = $_SESSION['auth_id_student'];
+        $buyList = $this -> buy -> getBuys($idStudent);
         require "views/listBuyHistoric.php";
     }
 

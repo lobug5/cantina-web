@@ -6,7 +6,7 @@ include_once 'models/buy.php';
 class BuyDAO
 {
    
-    public function getBuys()
+    public function getBuys($idStudent)
     {
         try {
             $connection = Connection::getConexao();
@@ -21,8 +21,12 @@ class BuyDAO
             inner join student B 
             ON A.idStudent = B.id 
             inner join products C
-            ON A.idProduct = C.id";
+            ON A.idProduct = C.id
+            where idStudent = :id";
+            
             $sql = $connection->prepare($query);
+
+            $sql->bindParam("idStudent", $idStudent);
 
             $sql->execute();
             $sql->setFetchMode(PDO::FETCH_ASSOC);
